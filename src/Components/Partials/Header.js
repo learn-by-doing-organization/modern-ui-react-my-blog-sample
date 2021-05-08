@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { POST_URLS } from '../../enums/posts';
 import logo from './../../logo.svg';
 
 /**
@@ -32,8 +33,9 @@ const Header = ({ title }) => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                             <Nav.Link id="home_link" href="/">Home</Nav.Link>
-                            <Nav.Link id="about_link" href="/about">About Us</Nav.Link>
-                            <Nav.Link id="contact_link" href="/contact">Contact Us</Nav.Link>
+                            <Nav.Link id="posts_link" href={POST_URLS.LIST}>Blog</Nav.Link>
+                            <Nav.Link id="about_link" href="/about">About Project</Nav.Link>
+                            <Nav.Link id="contact_link" href="/contact">Contact Project</Nav.Link>
                             <Nav.Link id="notfound_link" href="/abcdefg">Not Found</Nav.Link>
                             <Nav.Link id="error_link" href="/error">Error Page</Nav.Link>
                             <Nav.Link target="_blank" href="/docs">Docs [open new page]</Nav.Link>

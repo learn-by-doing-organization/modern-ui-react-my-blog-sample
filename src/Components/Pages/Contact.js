@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 import _ from 'lodash';
-import sanitizeHtml from 'sanitize-html';
+// import sanitizeHtml from 'sanitize-html';
 
 import FormValidateMessage from './../Utils/FormValidateMessage';
 
@@ -143,9 +143,22 @@ class Contact extends Component {
                     <Container>
                         <Row>
                             <Col sm={12}>
-                                <h2>Contact page</h2>
-                                <p>This is the contact page</p>
-                                <hr />
+                                <Jumbotron className="page posts list">
+                                    <h1>Contact Project</h1>
+                                    <p>In this page there are some contact to ask information or notify bug with the project.</p>
+                                    <dl>
+                                        <dt>my-blog-sample Repository (code of this website)</dt>
+                                        <dd>https://github.com/Magicianred/my-blog-sample</dd>
+                                        <dt>How to lanch project</dt>
+                                        <dd>https://github.com/Magicianred/my-blog-sample/blob/develop/README.md</dd>
+                                        <dt>Roadmap of the project</dt>
+                                        <dd>https://github.com/users/Magicianred/projects/5</dd>
+                                        <dt>Learn by doing Repository</dt>
+                                        <dd>https://github.com/Magicianred/learn-by-doing</dd>
+                                        <dt>About the author</dt>
+                                        <dd>https://github.com/Magicianred</dd>
+                                    </dl>
+                                </Jumbotron>
                             </Col>
                         </Row>
                         <Row>
