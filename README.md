@@ -8,6 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This app is a simple test of React
 [Repo](https://github.com/simple-app-organization/react-simple-app)
 
+## USE_DUMMY_DATA
+
+In order to use the Dummy data, set the costant ```USE_DUMMY_DATA``` to true in the *src\enums\posts.js* file.
+
 ## Available Scripts
 
 In the project directory, you can run:

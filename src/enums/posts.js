@@ -3,7 +3,7 @@ import { HTTP_METHOD } from './http';
 /**
  * SET to true for use DUMMY DATA
  */
-export const USE_DUMMY_DATA = false;
+export const USE_DUMMY_DATA = true;
 
 /**
  * the base path for react app link
