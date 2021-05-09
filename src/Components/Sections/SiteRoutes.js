@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import AboutSection from './AboutSection';
+import PostsSection from './PostsSection';
 import Home from '../Pages/Home';
 import Contact from '../Pages/Contact';
 import ContactConfirm from '../Pages/ContactConfirm';
@@ -19,6 +20,7 @@ import Error from '../Pages/Error';
 const SiteRoutes = () =>
     <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/posts" component={PostsSection} />
         <Route path="/about" component={AboutSection} />
         <Route exact path="/contact/confirm" component={ContactConfirm} />
         <Route exact path="/contact" component={Contact} />

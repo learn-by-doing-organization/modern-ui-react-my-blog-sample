@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { baseConfig } from '../config/base';
 import SiteRoutes from './Sections/SiteRoutes';
 import Header from './Partials/Header';
 import Footer from './Partials/Footer';
@@ -9,7 +10,7 @@ import './App.css';
 /**
  * Title of the site
  */
-const siteName = 'Simple App React';
+const siteName = baseConfig.siteName;
 
 /**
  * This fuction startup the application

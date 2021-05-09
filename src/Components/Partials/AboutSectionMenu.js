@@ -17,7 +17,7 @@ const AboutSectionMenu = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/about">About Us</Nav.Link>
+                        <Nav.Link href="/about">About Project</Nav.Link>
                         <Nav.Link id="whoare_link" href="/about/whoare">Who Are</Nav.Link>
                         <Nav.Link id="whereare_link" href="/about/whereare">Where Are</Nav.Link>
                     </Nav>

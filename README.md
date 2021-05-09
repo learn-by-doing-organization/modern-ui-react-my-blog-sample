@@ -1,7 +1,16 @@
+# modern-ui-react-my-blog-sample
+
+A react modern UI for simple blog of [learn-by-doing](https://github.com/Magicianred/learn-by-doing)  
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Simple App React 
+# based on Simple App React 
 This app is a simple test of React
+[Repo](https://github.com/simple-app-organization/react-simple-app)
+
+## USE_DUMMY_DATA
+
+In order to use the Dummy data, set the costant ```USE_DUMMY_DATA``` to true in the *src\enums\posts.js* file.
 
 ## Available Scripts
 

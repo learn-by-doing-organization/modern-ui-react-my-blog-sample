@@ -24,19 +24,15 @@ class About extends Component {
         return (
             <div className="page">
                 <Jumbotron className="page about">
-                    <h2>About Us page</h2>
-                    <p>This is the about us page</p>
-                    <hr />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut est non mauris iaculis vulputate. Vivamus luctus sapien et nisl mattis consequat. Vestibulum nec varius sem. Curabitur aliquet sapien in diam efficitur euismod. Fusce molestie nibh vel suscipit eleifend. Suspendisse dignissim et lectus at tempus. Nam feugiat lorem ut pharetra porta. Duis hendrerit hendrerit metus, vel laoreet libero commodo sed. Curabitur nunc eros, venenatis et diam a, hendrerit volutpat neque. Aliquam tempus cursus efficitur. Proin consequat fringilla massa, vitae imperdiet nibh feugiat at. Nulla malesuada vestibulum dolor et euismod. Donec eu urna urna.
-                    </p>
-                    <p>
-                        Sed imperdiet nunc eget ante aliquam auctor. Aliquam rhoncus quam sed sodales imperdiet. Aliquam erat volutpat. Sed mattis luctus pretium. Suspendisse tempor, nunc quis consectetur aliquam, metus orci porttitor augue, nec malesuada ipsum mauris eget tortor. Donec ut eleifend lorem. Quisque sagittis fermentum suscipit. Sed quis efficitur ex.
-                    </p>
-                    <p>
-                        Sed eget neque ante. Aliquam euismod ac lectus quis tempor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam placerat consectetur felis ut fermentum. Ut a mauris vel erat porta congue. Sed ut fermentum nisl, ac maximus turpis. Nunc rutrum, ipsum vitae laoreet rutrum, purus mi fermentum leo, ut pulvinar velit urna id leo. Vivamus eu mi enim. Praesent ac ultrices mi, lacinia interdum dui. Morbi tempus vulputate lacus ac luctus. Aenean in arcu interdum, efficitur quam eu, suscipit felis.
-                    </p>
+                    <h1>About Project</h1>
+                    <h2>Learn By Doing</h2>
+                    <p><strong>Learn By Doing</strong> is a project to teach web programming.</p>
                 </Jumbotron>
+                <p>A series of repositories will be created to encourage <em>learning by doing</em>.</p>
+                <p>From time to time activities will be proposed as if they were <em>real work tasks</em> commissioned by customers.</p>
+                <p>
+                    The activities will be divided into categories (database, frontend and backend) to allow you to discover your <em>programming interests and talents</em>.
+                </p>
                 <AboutSectionMenu />
             </div>
         );
