@@ -53,7 +53,7 @@ class Details extends Component {
         return (
             <div className="page">
                 <Jumbotron className={`page posts-${postId} details`}>
-                    <h1 class="display-4">Blog post</h1>
+                    <h1 className="display-4">Blog post</h1>
                     <p>Learn more <a href="/about">about this project</a>.</p>
                 </Jumbotron>
                 {hasErrors && (<span>oops an error occurred...</span>)}
