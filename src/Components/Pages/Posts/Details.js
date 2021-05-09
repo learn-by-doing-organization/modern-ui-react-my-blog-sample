@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import { POST_URLS } from '../../../enums/posts';
+import { CATEGORY_URLS } from '../../../enums/categories';
 import { PostsService } from '../../../services/PostsService';
+import BlogSectionMenu from './../../Partials/BlogSectionMenu';
 
 /**
  * Component for showing the Post Details page.
@@ -63,10 +65,13 @@ class Details extends Component {
                     <article>
                         <h3>{post.title}</h3>
                         <p>{post.text}</p>
+                        {post.category && (<p>
+                            <em>Category: </em>
+                            <Link to={CATEGORY_URLS.READ.replace('{id}', post.category.id)}>{post.category.name}</Link>
+                        </p>)}
                     </article>
                 )}
-                {/* <AboutSectionMenu /> */}
-                <p><Link to={POST_URLS.LIST}>return to posts page</Link></p>
+                <BlogSectionMenu />
             </div>
         );
     }

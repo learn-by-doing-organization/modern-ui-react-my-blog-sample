@@ -4,6 +4,7 @@ import queryString from 'query-string';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import { POST_URLS } from '../../../enums/posts';
 import { PostsService } from '../../../services/PostsService';
+import BlogSectionMenu from './../../Partials/BlogSectionMenu';
 
 /**
  * Component for showing the Posts List page.
@@ -88,6 +89,7 @@ class List extends Component {
                 {!loading && !hasErrors && hasNextPage && (
                     <p><Link to={`${POST_URLS.LIST}/?page=${page + 1}`}>next page</Link></p>
                 )}
+                <BlogSectionMenu />
             </div>
         );
     }
