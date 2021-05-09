@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import { POST_URLS } from '../../../enums/posts';
-import { CATEGORY_URLS } from '../../../enums/categories';
-import { PostsService } from '../../../services/PostsService';
+import { CategoriesService } from '../../../services/CategoriesService';
 import BlogSectionMenu from './../../Partials/BlogSectionMenu';
 
 /**
- * Component for showing the Post Details page.
+ * Component for showing the Category Details page.
  * 
  * @component
  * @example
@@ -19,7 +18,7 @@ class Details extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            postId: props.match.params.postId,
+            categoryId: props.match.params.categoryId,
             post: null,
             loading: false,
             hasErrors: false,
@@ -27,48 +26,51 @@ class Details extends Component {
     }
 
     componentDidMount() {
-        let { postId } = this.state;
-        PostsService.get(postId).then((data) => {
+        let { categoryId } = this.state;
+        CategoriesService.get(categoryId).then((data) => {
             this.setState({ 
-                post: data,
+                category: data,
                 loading: false,
                 hasErrors: false,
             })
         }).catch((error) => {
             console.error(error);
             this.setState({ 
-                post: [],
+                category: [],
                 loading: false,
                 hasErrors: true,
             })
         });
 
         this.setState({ 
-            post: [],
+            category: [],
             loading: true,
             hasErrors: false,
         })
     }
 
     render() {
-        let { postId, post, loading, hasErrors } = this.state;
+        let { categoryId, category, loading, hasErrors } = this.state;
         return (
             <div className="page">
-                <Jumbotron className={`page posts-${postId} details`}>
-                    <h1 className="display-4">Blog post</h1>
+                <Jumbotron className={`page categories-${categoryId} details`}>
+                    <h1 className="display-4">Blog category</h1>
                     <p>Learn more <a href="/about">about this project</a>.</p>
                 </Jumbotron>
                 {hasErrors && (<span>oops an error occurred...</span>)}
                 {loading && (<span>loading...</span>)}
-                {!loading && !hasErrors && !post && (<span>No post exists</span>)}
-                {!loading && !hasErrors && post && (
+                {!loading && !hasErrors && !category && (<span>No category exists</span>)}
+                {!loading && !hasErrors && category && (
                     <article>
-                        <h3>{post.title}</h3>
-                        <p>{post.text}</p>
-                        {post.category && (<p>
-                            <em>Category: </em>
-                            <Link to={CATEGORY_URLS.READ.replace('{id}', post.category.id)}>{post.category.name}</Link>
-                        </p>)}
+                        <h3>{category.title}</h3>
+                        <p>{category.description}</p>
+                        {category.posts.length > 0 && category.posts.map((item, index) => (
+                            <article key={index}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                                <p><Link to={POST_URLS.READ.replace('{id}',item.id)}>read more...</Link></p>
+                            </article>
+                        ))}
                     </article>
                 )}
                 <BlogSectionMenu />

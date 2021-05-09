@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import { POST_URLS } from '../../../enums/posts';
-import { PostsService } from '../../../services/PostsService';
+import { CATEGORY_URLS } from '../../../enums/categories';
+import { CategoriesService } from '../../../services/CategoriesService';
 import BlogSectionMenu from './../../Partials/BlogSectionMenu';
 
 /**
- * Component for showing the Posts List page.
+ * Component for showing the Categories List page.
  * 
  * @component
  * @example
@@ -32,7 +32,7 @@ class List extends Component {
         const params = queryString.parse(this.props.location.search);
         const currentPage = params.page || 1;
 
-        PostsService.getAll(currentPage).then((data) => {
+        CategoriesService.getAll(currentPage).then((data) => {
             this.setState({ 
                 total_items: data.total_items,
                 size: data.size,
@@ -72,22 +72,22 @@ class List extends Component {
         
         return (
             <div className="page">
-                <Jumbotron className="page posts list">
-                    <h1 className="display-4">Welcome</h1>
+                <Jumbotron className="page categories list">
+                    <h1 className="display-4">Categories list</h1>
                     <p>Learn more <a href="/about">about this project</a>.</p>
                 </Jumbotron>
                 {hasErrors && (<span>oops an error occurred...</span>)}
                 {loading && (<span>loading...</span>)}
-                {!loading && !hasErrors && items.length === 0 && (<span>No posts exists</span>)}
+                {!loading && !hasErrors && items.length === 0 && (<span>No categories exists</span>)}
                 {!loading && !hasErrors && items.length > 0 && items.map((item, index) => (
                     <article key={index}>
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
-                        <p><Link to={POST_URLS.READ.replace('{id}',item.id)}>read more...</Link></p>
+                        <h3>{item.name}</h3>
+                        <p>{item.name}</p>
+                        <p><Link to={CATEGORY_URLS.READ.replace('{id}',item.id)}>read more...</Link></p>
                     </article>
                 ))}
                 {!loading && !hasErrors && hasNextPage && (
-                    <p><Link to={`${POST_URLS.LIST}/?page=${page + 1}`}>next page</Link></p>
+                    <p><Link to={`${CATEGORY_URLS.LIST}/?page=${page + 1}`}>next page</Link></p>
                 )}
                 <BlogSectionMenu />
             </div>
