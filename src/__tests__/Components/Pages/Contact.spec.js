@@ -32,8 +32,8 @@ describe("Show the Contact Us page", () => {
         act(() => {
             render(<Contact />, container);
         });
-        expect(container.querySelector("h2").textContent).toBe("Contact page");
-        expect(container.querySelector("p").textContent).toBe("This is the contact page");
+        expect(container.querySelector("h1").textContent).toBe("Contact Project");
+        expect(container.querySelector("p").textContent).toBe("In this page there are some contact to ask information or notify bug with the project.");
     });
 
     xit("Show form module to send message", () => {

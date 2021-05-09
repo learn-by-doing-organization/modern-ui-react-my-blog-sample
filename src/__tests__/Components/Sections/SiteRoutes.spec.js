@@ -42,8 +42,8 @@ describe("Allowed the primary navigation of the site", () => {
             </MemoryRouter>,
             container
         );
-        expect(container.querySelector("h2").textContent).toBe("About Us page");
-        expect(container.querySelector("p").textContent).toBe("This is the about us page");
+        expect(container.querySelector("h1").textContent).toBe("About Project");
+        expect(container.querySelector("p").textContent).toBe("Learn By Doing is a project to teach web programming.");
     });
 
     it("Go to page Contact", () => {
@@ -54,8 +54,8 @@ describe("Allowed the primary navigation of the site", () => {
             </MemoryRouter>,
             container
         );
-        expect(container.querySelector("h2").textContent).toBe("Contact page");
-        expect(container.querySelector("p").textContent).toBe("This is the contact page");
+        expect(container.querySelector("h1").textContent).toBe("Contact Project");
+        expect(container.querySelector("p").textContent).toBe("In this page there are some contact to ask information or notify bug with the project.");
     });
 
     it("Go to page Not Found", () => {
