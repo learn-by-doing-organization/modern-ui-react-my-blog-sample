@@ -3,6 +3,9 @@ import { USE_DUMMY_DATA } from '../enums/posts';
 import { getDummyDataList, getDummyDataById } from '../dummydata/posts';
 import { POST_ENDPOINTS } from '../enums/posts';
 
+/**
+ * Handle retrieve list of posts
+ */
 function getAll() {
     if(USE_DUMMY_DATA) {
         return new Promise((resolve, reject) => {
@@ -20,15 +23,28 @@ function getAll() {
         });
     } else {
         const [url, method] = POST_ENDPOINTS.LIST;
-        console.log({url})
-        console.log({method})
-        return request({
-            url: url,
-            method: method,
+
+        return new Promise((resolve, reject) => {
+            request({
+                url: url,
+                method: method,
+            }).then((data) => {
+                const result = {
+                    total_items: data.length,
+                    items: data
+                };
+                resolve(result);
+            }).catch((error) => {
+                console.error(error);
+                reject(error);
+            });
         });
     }
 }
 
+/**
+ * Handle retrieve post details by id
+ */
 function get(id) {
     if(!id) {
         console.error('no id for get of PostsService');
@@ -44,13 +60,25 @@ function get(id) {
               }
         });
     } else {
-        return request({
-            url: POST_ENDPOINTS.READ.replace('{id}', id.toString()),
-            method: 'GET',
+        const [url, method] = POST_ENDPOINTS.READ;
+
+        return new Promise((resolve, reject) => {
+            request({
+                url: url.replace('{id}', id.toString()),
+                method: method,
+            }).then((data) => {
+                resolve(data);
+            }).catch((error) => {
+                console.error(error);
+                reject(error);
+            });
         });
     }
 }
 
+/**
+ * Service class to handle retrieve of posts data
+ */
 export const PostsService = {
     getAll,
     get,
